@@ -63,8 +63,8 @@ void loop() {
     // we do some work to prevent bouncing
     delay(5);
     if (digitalRead(interruptPin) == LOW) {
-      setActuators(s1, s2);               // run motors
       getNewPosition();                  // get new needle down position
+      setActuators(s1, s2);               // run motors
     }
     needleUp = false;                  // set Needle Up state to false TODO: Consider changing this variable name, bc it could be confusing, maybe change to doMove, doStep, moveMotor -- this variable is more tide to motor movement than the needle state
   }
