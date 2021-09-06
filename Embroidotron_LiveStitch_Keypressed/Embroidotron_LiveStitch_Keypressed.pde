@@ -63,7 +63,7 @@ void draw() {
 void serialEvent(Serial myPort) {
   if (serialConnected) {
     // read a byte from the serial port:
-    println("\n\nNew Serial Event");
+    //println("\n\nNew Serial Event");
     String inBytes = arduino.readString();
     if (inBytes.charAt(0) == 'U') {
       // send new coordinates to stepper motor
@@ -95,31 +95,27 @@ void keyPressed(){
 
 
 void updatePoints() {
-  
+  int offset = 20;
   if (currentKey == "UP"){
     println("up");
     println(currentKey);
     //this goes up
-    s1 +=5;//= //int((needleDown.x-zeroPoint.x));
-    s2 -=5;//= //int((needleDown.y-zeroPoint.y));
+    s2 -=offset;//= //int((needleDown.y-zeroPoint.y));
   } else if (currentKey == "LEFT"){
     println("left");
     println(currentKey);
     //goes left
-    s1 +=5;//= //int((needleDown.x-zeroPoint.x));
-    s2 +=5;//= //int((needleDown.y-zeroPoint.y));
+    s1-=offset;
   } else if (currentKey == "RIGHT"){
     println("right");
     println(currentKey);
     //right
-    s1 -=5;//= //int((needleDown.x-zeroPoint.x));
-    s2 -=5;//= //int((needleDown.y-zeroPoint.y));
+    s1+=offset;
   } else if (currentKey == "DOWN"){
     println("down");
     println(currentKey);
     //down
-    s1 -=5;//= //int((needleDown.x-zeroPoint.x));
-    s2 +=5;//= //int((needleDown.y-zeroPoint.y));
+    s2 +=offset;//= //int((needleDown.y-zeroPoint.y));
   }
   
   totalSteps++; //current step
@@ -127,15 +123,16 @@ void updatePoints() {
 
 
 void write(int s1, int s2) {
-  String writeMe = str(s1) + " " + str(s2) + "\n";
+  PVector P = new PVector(s1,s2);
+  P.rotate(PI/4);
+  String writeMe = str(int(P.x)) + " " + str(int(P.y)) + "\n";
   if (doSend) {
     arduino.write(writeMe);
-    println("Sent s1: " + str(s1));
-    println("Sent s2: " + str(s2));
+    //println("Sent s1: " + str(s1));
+    //println("Sent s2: " + str(s2));
   } else {
     println("would have sent:");
     println(writeMe);
   }
 }
-
 ////////////////////// END SERIAL COMS HELPERS /////////////////////////////////////////////////////////

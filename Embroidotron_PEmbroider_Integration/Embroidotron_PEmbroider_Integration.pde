@@ -27,17 +27,30 @@ void setup() {
 
   E.setStitch(10, 30, 0);
   E.hatchSpacing(20);
-  E.hatchMode(PEmbroiderGraphics.SPIRAL);  
+  E.hatchMode(PEmbroiderGraphics.CONCENTRIC);  
 
   E.noStroke();
   E.fill(0, 0, 0);
-  E.ellipse(width/2, height/2, 250, 250);
+  E.pushMatrix();
+  E.noStroke();
+  //E.circle(width/2,height/2, 250);
   
+  E.hatchSpacing(5);
+  E.translate(width/2, height/2);
   E.stroke(100);
-  E.line(width/2, height/2, width/2-100, height/2-100);
-  E.line( width/2-100, height/2-100, width/2, height/2);
+  E.line(0, 0, 0, 200);
+  E.rect(-20, 200-20, 40, 40);
+  E.stroke(100);
+  E.line(0, 200,0, 0);
+  E.line(0, 0, 200 ,0);
+  E.circle(200,0, 30);
+  E.line(200, 0 , 0, 0);
+ // E.line(width/2-100, height/2-100, width/2, height/2);
+  
+  E.popMatrix();
+  
 
-  E.visualize();
+  E.visualize(true,true,true);
   //// END EMBROIDERY DESIGN ////////////////////////////// -------------------------
 
   // SETUP EMBROIDERY COMMUNICATIONS
@@ -65,14 +78,20 @@ void setup() {
 
 void draw() {
   // we draw a green circle on top of the current needle down
+  fill(100,100,100,10);
+  rect(0,0,width,height);
+  
   fill(0, 255, 0);
   PVector needleDown = getNeedleDown(E, totalSteps);
-  ellipse(needleDown.x, needleDown.y, 3, 3);
+  pushMatrix();
+  translate(zeroPoint.x,zeroPoint.y);
+  ellipse(s1, s2, 3, 3);
+  popMatrix();
   
   // DEBUGGING CODE //
   if (serialConnected==false) {
     updatePoints();
-    delay(500);
+    delay(100);
   }
   // END DEBUGGING CODE //
 }
@@ -110,7 +129,9 @@ void updatePoints() {
 
 
 void write(int s1, int s2) {
-  String writeMe = str(s1) + " " + str(s2) + "\n";
+  PVector P = new PVector(s1,s2);
+  P.rotate(PI/4);
+  String writeMe = str(int(P.x)) + " " + str(int(P.y)) + "\n";
   if (doSend) {
     arduino.write(writeMe);
     println("Sent s1: " + str(s1));
