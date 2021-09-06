@@ -1,3 +1,4 @@
+/// EMBROIDOTRON SETUP ///
 import processing.serial.*;
 Serial arduino; 
 int s1 = 0;
@@ -5,24 +6,15 @@ int s2 = 0;
 int totalSteps = 0;
 PVector zeroPoint;
 
-/// DEBUGGING BOOLEANS ////
-boolean doSend = true; // for testing without actually sending points set to false (motors will not move if false)
-boolean serialConnected = true; // for testing without connection to arduino set to false 
-
-
-
-
-
-//-----------------------------------------------------
+/// PEMBROIDER SETUP///
 import processing.embroider.*;
 PEmbroiderGraphics E;
 int stitchPlaybackCount = 0;
 int lastStitchTime = 0;
 
-
-//-----------------------------------------------------
-
-
+/// DEBUGGING BOOLEANS ///
+boolean doSend = true; // for testing without actually sending points set to false (motors will not move if false)
+boolean serialConnected = true; // for testing without connection to arduino set to false 
 
 
 
@@ -33,21 +25,20 @@ void setup() {
   E = new PEmbroiderGraphics(this, width, height);
   E.beginDraw();
 
-  // set this to false if you don't want
-  // PEmbroider to calculate intermediate stitch points for you
-  E.toggleResample(true);
-
   E.setStitch(10, 30, 0);
   E.hatchSpacing(20);
   E.hatchMode(PEmbroiderGraphics.SPIRAL);  
-  
-  E.scale(.8);
+
   E.noStroke();
   E.fill(0, 0, 0);
-  E.ellipse(width/2, height/2, 500, 500);
+  E.ellipse(width/2, height/2, 250, 250);
   
+  E.stroke(100);
+  E.line(width/2, height/2, width/2-100, height/2-100);
+  E.line( width/2-100, height/2-100, width/2, height/2);
+
   E.visualize();
-  //// END EMBROIDERY DESIGN //////////////////////////////
+  //// END EMBROIDERY DESIGN ////////////////////////////// -------------------------
 
   // SETUP EMBROIDERY COMMUNICATIONS
   zeroPoint = getNeedleDown(E, 0); //get the first point so we can work away from there
@@ -72,18 +63,20 @@ void setup() {
 }
 
 
-
 void draw() {
   // we draw a green circle on top of the current needle down
   fill(0, 255, 0);
   PVector needleDown = getNeedleDown(E, totalSteps);
   ellipse(needleDown.x, needleDown.y, 3, 3);
   
-  if(serialConnected==false){
+  // DEBUGGING CODE //
+  if (serialConnected==false) {
     updatePoints();
     delay(500);
   }
+  // END DEBUGGING CODE //
 }
+
 
 
 
@@ -95,6 +88,7 @@ void serialEvent(Serial myPort) {
     println("\n\nNew Serial Event");
     String inBytes = arduino.readString();
     if (inBytes.charAt(0) == 'U') {
+      
       // send new coordinates to stepper motor
       write(s1, s2);
 
@@ -106,55 +100,12 @@ void serialEvent(Serial myPort) {
   }
 }
 
-String currentKey;
-
-void keyPressed(){
-  println("keycode : " + keyCode);
- if (keyCode == UP) {
-   currentKey = "UP";
- } else if (keyCode == DOWN){
-   currentKey = "DOWN";
- } else if (keyCode == LEFT){
-   currentKey = "LEFT";
- } else if (keyCode == RIGHT){
-   currentKey = "RIGHT";
- }
-  
-}
-
 
 void updatePoints() {
   PVector needleDown = getNeedleDown(E, totalSteps);
-  
-  if (currentKey == "UP"){
-    println("up");
-    println(currentKey);
-    //this goes up
-    s1 +=5;//= //int((needleDown.x-zeroPoint.x));
-    s2 -=5;//= //int((needleDown.y-zeroPoint.y));
-  } else if (currentKey == "LEFT"){
-    println("left");
-    println(currentKey);
-    //goes left
-    s1 +=5;//= //int((needleDown.x-zeroPoint.x));
-    s2 +=5;//= //int((needleDown.y-zeroPoint.y));
-  } else if (currentKey == "RIGHT"){
-    println("right");
-    println(currentKey);
-    //right
-    s1 -=5;//= //int((needleDown.x-zeroPoint.x));
-    s2 -=5;//= //int((needleDown.y-zeroPoint.y));
-  } else if (currentKey == "DOWN"){
-    println("down");
-    println(currentKey);
-    //down
-    s1 -=5;//= //int((needleDown.x-zeroPoint.x));
-    s2 +=5;//= //int((needleDown.y-zeroPoint.y));
-  }
-  
+  s1 = int((needleDown.x-zeroPoint.x));
+  s2 = int((needleDown.y-zeroPoint.y));
   totalSteps++; //current step
-  
-  
 }
 
 
@@ -174,7 +125,8 @@ void write(int s1, int s2) {
 
 
 
-////////////////////// NEEDLE DOWN HELPERS /////////////////////////////////////////////////////////
+
+////////////////////// NEEDLE DOWN HELPERS ////////////////////////////////////////////////////////////
 
 PVector getNeedleDown(PEmbroiderGraphics E, int ndIndex) {
   //get the ith needle down
@@ -202,11 +154,4 @@ int ndLength(PEmbroiderGraphics E) {
   return n;
 }
 
-
-void CheckNeedleDowns(PEmbroiderGraphics E) {
-  // run various checks on the needle downs to prevent any errors 
-  // basic error checks:
-  // 1) travel length check (check for any excessive travels)
-  // 2) stitch density check (check the number of stitches per unit area, would be great to provide this as a heat map)
-}
 ////////////////////// END NEEDLE DOWN HELPERS /////////////////////////////////////////////////////////
