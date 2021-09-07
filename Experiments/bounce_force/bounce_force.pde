@@ -1,14 +1,15 @@
 /// EMBROIDOTRON SETUP ///
 import processing.serial.*;
 Serial arduino; 
-int s1 = 0;
+int s1 = 0; // TODO : CHANGE NAME OF VARIABLES TO X AND Y
 int s2 = 0;
 int totalSteps = 0;
 PVector zeroPoint;
 
 /// DEBUGGING BOOLEANS ////
-boolean doSend = false; // for testing without actually sending points set to false (motors will not move if false)
-boolean serialConnected = false; // for testing without connection to arduino set to false 
+boolean doSend = true; // for testing without actually sending points set to false (motors will not move if false)
+boolean serialConnected = true; // for testing without connection to arduino set to false 
+boolean penPlotter = true; // for
 
 
 
@@ -35,7 +36,7 @@ void setup() {
   if (serialConnected) {
     try {
       //// CHANGE PORT NAME TO UNO PORT ////// <------------------------------------------------ CHANGE HERE ----------------------
-      String portName = "COM3";
+      String portName = "COM9";
       ////////////////////////////////////////
 
       //// SERIAL COMMUNICATION SETUP/////////////
@@ -110,16 +111,24 @@ void keyPressed(){
 void updatePoints() {
   int offset = 5;
   
-  if( (  (s1 + dx*offset) > boxW/2)  ||  (  (s1 + dx*offset) < (0-boxW/2))) {
+  if( (  (s1 + dx) > boxW/2)  ||  (  (s1 + dx) < (0-boxW/2))) {
     dx *= -1;
   }  
-  if( (  (s2 + dy*offset) > boxH/2)  ||  (  (s2 + dy*offset) < (0-boxH/2))) {
+  if( (  (s2 + dy) > boxH/2)  ||  (  (s2 + dy) < (0-boxH/2))) {
     dy *= -1;
   }
   
+  if(abs(dx) > 20){
+    dx = 20*dx/abs(dx);
+  }
   
-  s1 += dx*offset;
-  s2 += dy*offset;
+  if(abs(dy) > 20){
+    dy = 20*dy/abs(dy);
+  }
+  
+  s1 += dx;
+  s2 += dy;
+  
   
   
   if (currentKey == "UP"){
@@ -155,8 +164,12 @@ void updatePoints() {
 
 void write(int s1, int s2) {
   PVector P = new PVector(s1,s2);
+  int dir = 1;
   P.rotate(PI/4);
-  String writeMe = str(int(P.x)) + " " + str(int(P.y)) + "\n";
+  if(penPlotter){
+    dir = -1;
+  }
+  String writeMe = str(int(P.x)*dir) + " " + str(int(P.y)*dir) + "\n";
   if (doSend) {
     arduino.write(writeMe);
     //println("Sent s1: " + str(s1));
