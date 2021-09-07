@@ -9,7 +9,7 @@ PVector zeroPoint;
 /// DEBUGGING BOOLEANS ////
 boolean doSend = true; // for testing without actually sending points set to false (motors will not move if false)
 boolean serialConnected = true; // for testing without connection to arduino set to false 
-boolean penPlotter = true;
+boolean penPlotter = false;
 
 
 
