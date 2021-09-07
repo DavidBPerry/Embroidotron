@@ -9,7 +9,7 @@ PVector zeroPoint;
 /// DEBUGGING BOOLEANS ////
 boolean doSend = true; // for testing without actually sending points set to false (motors will not move if false)
 boolean serialConnected = true; // for testing without connection to arduino set to false 
-
+boolean penPlotter = true;
 
 
 
@@ -124,8 +124,12 @@ void updatePoints() {
 
 void write(int s1, int s2) {
   PVector P = new PVector(s1,s2);
+  int dir = 1;
   P.rotate(PI/4);
-  String writeMe = str(int(P.x)) + " " + str(int(P.y)) + "\n";
+  if(penPlotter){
+    dir = -1;
+  }
+  String writeMe = str(int(P.x)*dir) + " " + str(int(P.y)*dir) + "\n";
   if (doSend) {
     arduino.write(writeMe);
     //println("Sent s1: " + str(s1));
