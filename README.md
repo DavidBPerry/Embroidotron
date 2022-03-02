@@ -4,8 +4,8 @@ The Embroidotron is designed to convert any standard sewing machine into a compu
 This project was developed as a team in CMU's Electromechanical Systems Design Class and carried forward with support from [The Carnegie Mellon Textiles Lab](https://textiles-lab.github.io/). The Embroidotron was conceived of by the team: Amy Santoso, Amos Fishman-Resheff, David Perry, Juan Luis Vasquez, and Yuree Chu. David Perry has carried this project forward with support from the initial team.
 
 ![Embroidotron](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/PXL_20210723_194200352.jpg?raw=true)
-![Stitching Close](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/close_stitching_1.gif?raw=true)
-![Stitching Far](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/far_stitching_1.gif?raw=true)
+
+![Stitching Close](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/close_stitching_1.gif?raw=true)![Stitching Far](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/far_stitching_1.gif?raw=true)
 
 
 ## Manuals
