@@ -17,16 +17,10 @@ Demos the "live stitch mode" in which the user can drive the stitch path using t
  
 ## Images
 
-<!-- <img src="http://url/image.png" height="60" width="60" > -->
-<img src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/PXL_20210723_194200352.jpg?raw=true"  height="60" width="60">
-<img
-  src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/far_stitching_1.gif?raw=true"
-  alt="Stitching Far"
-  style="display: inline-block; margin: 0 auto; max-width: 200px">
-<img
-  src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/close_stitching_1.gif?raw=true"
-  alt="Stitching Close"
-  style="display: inline-block; margin: 0 auto; max-width: 200px">
+
+<img src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/PXL_20210723_194200352.jpg?raw=true" width="300">
+<img src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/far_stitching_1.gif?raw=true" width="300">
+<img src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/close_stitching_1.gif?raw=true width="300">
   
 ## Live Stitching
 A unique trait of the Embroidotron is that it can take input during stitching that can modify the stitch path in real time. In this demo the stitch path is guided by the arrow keys on the users laptop. See the code for this [here](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroidotron_Processing/Embroidotron_LiveStitch_Keypressed/Embroidotron_LiveStitch_Keypressed.pde)
