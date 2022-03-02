@@ -1,9 +1,12 @@
 # Embroidotron
-![Computation Embroidery Lettering](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/PXL_20210723_194200352.jpg?raw=true)
-
 The Embroidotron is designed to convert any standard sewing machine into a computer controlled embroidery machine. Our goal is to make machine embroidery more accessible, hackable, and fun. This repository serves as a source for the software, CAD designs and examples for running the Embroidotron.
 
 This project was developed as a team in CMU's Electromechanical Systems Design Class and carried forward with support from [The Carnegie Mellon Textiles Lab](https://textiles-lab.github.io/). The Embroidotron was conceived of by the team: Amy Santoso, Amos Fishman-Resheff, David Perry, Juan Luis Vasquez, and Yuree Chu. David Perry has carried this project forward with support from the initial team.
+
+![Embroidotron](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/PXL_20210723_194200352.jpg?raw=true)
+![Stitching Close](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/close_stitching_1.gif?raw=true)
+![Stitching Far](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/far_stitching_1.gif?raw=true)
+
 
 ## Manuals
 See the [Embroidotron Manual](https://docs.google.com/presentation/d/e/2PACX-1vQDnrs32w4o7STt2GDkAjPlq3Xo2kj3-9yWwGp2af6CuQFf4LI4kpUE5b-No-ILSyXCkttRJLsAB5MZ/pub?start=false&loop=false&delayms=3000) for instructions on setting up hardware and running your first job.
