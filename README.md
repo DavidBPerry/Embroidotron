@@ -30,7 +30,7 @@ Demos the "live stitch mode" in which the user can drive the stitch path using t
 ## Live Stitching
 A unique trait of the Embroidotron is that it can take input during stitching that can modify the stitch path in real time. In this demo the stitch path is guided by the arrow keys on the users laptop.
 
-[![Live Stitch Demo](https://img.youtube.com/vi/fqFlIdqWc_c&t=4s/0.jpg)](https://www.youtube.com/watch?v=fqFlIdqWc_c&t=4s)
+[![Live Stitch Demo](https://img.youtube.com/vi/fqFlIdqWc_c/0.jpg)](https://www.youtube.com/watch?v=fqFlIdqWc_c)
 
 
 ## Credits
