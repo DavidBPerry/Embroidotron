@@ -16,11 +16,9 @@ Demos the "live stitch mode" in which the user can drive the stitch path using t
  The firmware on the arduino which coordinates the needle, computer, and stepper motors.
  
 ## Images
-
-
-<img src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/PXL_20210723_194200352.jpg?raw=true" width="300">
-<img src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/far_stitching_1.gif?raw=true" width="300">
-<img src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/close_stitching_1.gif?raw=true width="300">
+<img src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/PXL_20210723_194200352.jpg?raw=true" width="400">
+<img src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/far_stitching_1.gif?raw=true" width="400">
+<img src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/close_stitching_1.gif?raw=true" width="400">
   
 ## Live Stitching
 A unique trait of the Embroidotron is that it can take input during stitching that can modify the stitch path in real time. In this demo the stitch path is guided by the arrow keys on the users laptop. See the code for this [here](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroidotron_Processing/Embroidotron_LiveStitch_Keypressed/Embroidotron_LiveStitch_Keypressed.pde)
