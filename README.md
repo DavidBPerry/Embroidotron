@@ -1,5 +1,5 @@
 # Embroidotron
-![Computation Embroidery Lettering](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/PXL_20210723_194142102.jpg?raw=true)
+![Computation Embroidery Lettering](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/PXL_20210723_194200352.jpg?raw=true)
 
 The Embroidotron is designed to convert any standard sewing machine into a computer controlled embroidery machine. Our goal is to make machine embroidery more accessible, hackable, and fun. This repository serves as a source for the software, CAD designs and examples for running the Embroidotron.
 
