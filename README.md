@@ -1,4 +1,6 @@
 # Embroidotron
+![Computation Embroidery Lettering](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/PXL_20210723_194142102.jpg?raw=true)
+
 The Embroidotron is designed to convert any standard sewing machine into a computer controlled embroidery machine. Our goal is to make machine embroidery more accessible, hackable, and fun. This repository serves as a source for the software, CAD designs and examples for running the Embroidotron.
 
 This project was developed as a team in CMU's Electromechanical Systems Design Class and carried forward with support from [The Carnegie Mellon Textiles Lab](https://textiles-lab.github.io/). The Embroidotron was conceived of by the team: Amy Santoso, Amos Fishman-Resheff, David Perry, Juan Luis Vasquez, and Yuree Chu. David Perry has carried this project forward with support from the initial team.
