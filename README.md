@@ -5,7 +5,12 @@ This project was developed as a team in CMU's Electromechanical Systems Design C
 
 ![Embroidotron](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/PXL_20210723_194200352.jpg?raw=true)
 
-![Stitching Close](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/close_stitching_1.gif?raw=true)![Stitching Far](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/far_stitching_1.gif?raw=true)
+<img
+  src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/far_stitching_1.gif?raw=true"
+  alt="Stitching Far"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+![Stitching Far](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/far_stitching_1.gif?raw=true)
+![Stitching Close](https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/close_stitching_1.gif?raw=true)
 
 
 ## Manuals
