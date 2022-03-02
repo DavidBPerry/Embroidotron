@@ -19,7 +19,7 @@ Demos the "live stitch mode" in which the user can drive the stitch path using t
 <img
   src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/PXL_20210723_194200352.jpg?raw=true"
   alt="Embroidotron"
-  style="display: inline-block; margin: 0 auto; max-width: 200px">
+  style="display: inline-block; margin: 0 auto; max-width: 50px">
 <img
   src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/far_stitching_1.gif?raw=true"
   alt="Stitching Far"
