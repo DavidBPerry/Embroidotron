@@ -16,10 +16,9 @@ Demos the "live stitch mode" in which the user can drive the stitch path using t
  The firmware on the arduino which coordinates the needle, computer, and stepper motors.
  
 ## Images
-<img
-  src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/PXL_20210723_194200352.jpg?raw=true"
-  alt="Embroidotron"
-  style="display: inline-block; margin: 0 auto; max-width: 50px">
+
+<!-- <img src="http://url/image.png" height="60" width="60" > -->
+<img src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/PXL_20210723_194200352.jpg?raw=true"  height="60" width="60">
 <img
   src="https://github.com/DavidBPerry/Embroidotron/blob/master/Embroido_Documentation/far_stitching_1.gif?raw=true"
   alt="Stitching Far"
